@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Language-Powershell-blue"> <img src="https://img.shields.io/badge/Maintenance%20Level-Actively%20Developed-brightgreen"> ![GitHub Release](https://img.shields.io/github/v/release/evild3ad/Collect-MemoryDump) <a href="https://twitter.com/Evild3ad79"><img src="https://img.shields.io/twitter/follow/Evild3ad79?style=social"></a>
+<img src="https://img.shields.io/badge/Language-Powershell-blue"> <img src="https://img.shields.io/badge/Maintenance%20Level-Actively%20Developed-brightgreen"> ![GitHub Release](https://img.shields.io/github/v/release/evild3ad/Collect-MemoryDump?label=Release) <a href="https://x.com/LETHAL_DFIR"><img src="https://img.shields.io/twitter/follow/LETHAL_DFIR?style=social"></a>
 
 # Collect-MemoryDump
 Collect-MemoryDump - Automated Creation of Windows Memory Snapshots for DFIR
