@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/Language-Powershell-blue"> <img src="https://img.shields.io/badge/Maintenance%20Level-Actively%20Developed-brightgreen"> ![GitHub Release](https://img.shields.io/github/v/release/evild3ad/Collect-MemoryDump?label=Release) <a href="https://x.com/LETHAL_DFIR"><img src="https://img.shields.io/twitter/follow/LETHAL_DFIR?style=social"></a>
+<p align="center"><a href="https://github.com/PowerShell/PowerShell"><img src="https://img.shields.io/badge/Language-Powershell-blue" style="text-align:center;display:block;"></a> <a href="https://github.com/evild3ad/Collect-MemoryDump/releases/latest"><img src="https://img.shields.io/github/v/release/evild3ad/Collect-MemoryDump?label=Release" style="text-align:center;display:block;"></a> <img src="https://img.shields.io/badge/Maintenance%20Level-Actively%20Developed-brightgreen" style="text-align:center;display:block;"> <img src="https://img.shields.io/badge/Digital%20Signature-Valid-brightgreen" style="text-align:center;display:block;"> <a href="https://x.com/LETHAL_DFIR"><img src="https://img.shields.io/twitter/follow/LETHAL_DFIR?style=social" style="text-align:center;display:block;"></a></p>
 
 # Collect-MemoryDump
 Collect-MemoryDump - Automated Creation of Windows Memory Snapshots for DFIR
@@ -11,7 +11,8 @@ Features:
 * Checks if you have enough free disk space to save memory dump file
 * Collects a Microsoft Crash Dump w/ MAGNET DumpIt for Windows
 * Collects a Raw Physical Memory Dump w/ MAGNET DumpIt, MAGNET RAM Capture, Belkasoft Live RAM Capturer and WinPMEM
-* Pagefile Collection w/ MAGNET Response &#8594; very useful when dealing with reflective PE injection techniques
+* Pagefile Collection w/ MAGNET Response (Optional) &#8594; very useful when dealing with reflective PE injection techniques
+* Triage-Collection w/ MAGNET Response (Optional)
 * Collects Running Process/Module Information w/ MAGNET Response
 * Checks for Encrypted Volumes w/ MAGNET Encrypted Disk Detector (EDD)
 * Collects BitLocker Recovery Key
@@ -69,16 +70,30 @@ Copy the required files to following file locations:
 Check out: [Wiki: How-to-add-or-update-dependencies](https://github.com/evild3ad/Collect-MemoryDump/wiki/How-to-add-or-update-dependencies)
 
 ## Usage  
-.\Collect-MemoryDump.ps1 [-Tool] [--Pagefile]
+```powershell
+.\Collect-MemoryDump.ps1 [-Tool] [--Pagefile] [--Triage]
+```
 
 Example 1 - Collect Microsoft Crash Dump and Pagefile  
+```powershell
 .\Collect-MemoryDump.ps1 -Comae --Pagefile  
+```
 
 Example 2 - Collect Raw Physical Memory Dump and Pagefile  
+```powershell
 .\Collect-MemoryDump.ps1 -DumpIt --Pagefile
+```
 
 Example 3 - Collect Raw Physical Memory Dump    
+```powershell
 .\Collect-MemoryDump.ps1 -WinPMEM  
+```
+
+Example 4 - Collect Microsoft Crash Dump, Pagefile and Forensic Artifacts
+```powershell
+.\Collect-MemoryDump.ps1 -Comae --Pagefile --Triage
+```  
+</br>
 
 > [!IMPORTANT]  
 > Microsoft .NET Framework 4 (or later) must be installed on target system for MAGNET Encrypted Disk Detector and MAGNET Response. Simply skip the Pagefile Collection or download and install Microsoft .NET Framework 4 (Standalone Installer) from the Microsoft download site:  
@@ -145,27 +160,23 @@ https://www.microsoft.com/en-us/download/details.aspx?id=17718
 **Fig 19:** Collected System Information
 
 ## Dependencies  
-7-Zip 23.01 Standalone Console (2023-06-20)  
+7-Zip 24.09 Standalone Console (2024-11-29)  
 https://www.7-zip.org/download.html  
 
 Belkasoft Live RAM Capturer (2018-10-22)  
 https://belkasoft.com/ram-capturer  
 
 MAGNET DumpIt for Windows (2023-01-17) &#8594; Comae-Toolkit-v20230117  
-https://www.magnetforensics.com/resources/magnet-dumpit-for-windows/  
-https://support.magnetforensics.com/s/free-tools  
+https://www.magnetforensics.com/resources/magnet-dumpit-for-windows/    
 
 MAGNET Encrypted Disk Detector v3.1.0 (2022-06-19)  
-https://www.magnetforensics.com/resources/encrypted-disk-detector/  
-https://support.magnetforensics.com/s/free-tools   
+https://www.magnetforensics.com/resources/encrypted-disk-detector/     
 
 MAGNET RAM Capture v1.2.0 (2019-07-24)  
-https://www.magnetforensics.com/resources/magnet-ram-capture/  
-https://support.magnetforensics.com/s/free-tools  
+https://www.magnetforensics.com/resources/magnet-ram-capture/    
 
-MAGNET Response v1.7.0 (2023-04-28)  
+Magnet RESPONSE v1.7.1 (2024-09-07)  
 https://www.magnetforensics.com/resources/magnet-response/  
-https://support.magnetforensics.com/s/free-tools  
 
 PsLoggedOn v1.35 (2016-06-29)  
 https://docs.microsoft.com/de-de/sysinternals/downloads/psloggedon  

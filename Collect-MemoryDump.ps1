@@ -1,10 +1,10 @@
-﻿# Collect-MemoryDump v1.0
+﻿# Collect-MemoryDump v1.1.0
 #
 # @author:    Martin Willing
-# @copyright: Copyright (c) 2019-2024 Martin Willing. All rights reserved.
+# @copyright: Copyright (c) 2019-2025 Martin Willing. All rights reserved.
 # @contact:   Any feedback or suggestions are always welcome and much appreciated - mwilling@lethal-forensics.com
 # @url:		  https://lethal-forensics.com/
-# @date:	  2024-01-06
+# @date:	  2025-03-10
 #
 #
 # ██╗     ███████╗████████╗██╗  ██╗ █████╗ ██╗      ███████╗ ██████╗ ██████╗ ███████╗███╗   ██╗███████╗██╗ ██████╗███████╗
@@ -16,7 +16,7 @@
 #
 #
 # Dependencies:
-# 7-Zip 23.01 Standalone Console (2023-06-20)
+# 7-Zip 24.09 Standalone Console (2024-11-29)
 # https://www.7-zip.org/download.html
 #
 # Belkasoft Live RAM Capturer (2018-10-22)
@@ -24,21 +24,17 @@
 #
 # MAGNET DumpIt for Windows (2023-01-17) --> Comae-Toolkit-v20230117
 # https://www.magnetforensics.com/resources/magnet-dumpit-for-windows/
-# https://support.magnetforensics.com/s/free-tools
 #
 # Magnet Encrypted Disk Detector v3.1.0 (2022-06-19)
 # Requirements: .NET v4.0.30319
 # https://www.magnetforensics.com/resources/encrypted-disk-detector/
-# https://support.magnetforensics.com/s/free-tools
 #
 # Magnet RAM Capture v1.2.0 (2019-07-24)
 # https://www.magnetforensics.com/resources/magnet-ram-capture/
-# https://support.magnetforensics.com/s/free-tools
 #
-# Magnet RESPONSE v1.7.0 (2023-04-28)
+# Magnet RESPONSE v1.7.1 (2024-09-07)
 # Requirements: .NET v4.0.30319
 # https://www.magnetforensics.com/resources/magnet-response/
-# https://support.magnetforensics.com/s/free-tools
 #
 # PsLoggedOn v1.35 (2016-06-29)
 # https://docs.microsoft.com/de-de/sysinternals/downloads/psloggedon
@@ -47,127 +43,16 @@
 # https://github.com/Velocidex/WinPmem/releases
 #
 #
-# Changelog:
-# Version 0.1
-# Release Date: 2019-10-25
-# Initial Release
-#
-# Version 0.2
-# Release Date: 2020-02-25
-# Added: Creating Memory Snapshot w/ DumpIt (Raw Physical Memory Dump)
-# Added: Creating Memory Snapshot w/ Magnet RAM Capture (Raw Physical Memory Dump)
-# Added: Bitlocker-Protectors
-# Added: DeviceGuard
-# Added: NTFS “Last Access” Updates
-# Added: Code Signing
-# Added: Verify File Integrity of Memory Acquisition Tools
-# Update: Magnet Forensics Encrypted Disk Detector v2.2.1 --> Magnet Forensics Encrypted Disk Detector v2.2.2
-# Fixed: Other minor fixes and improvements
-#
-# Version 0.3
-# Release Date: 2020-04-10
-# Update: Comae-Toolkit-3.0.20200219.1 --> Comae-Toolkit-3.0.20200224.1
-# Added: Usage of Get-FileHash (if available) instead of certutil.exe for better speed
-# Added: Create Time and Last Modified Time of secure archive
-# Added: Printing File Hash of secure archive
-# Added: Check for active users via PsLoggedOn
-# Added: Package script as EXE
-# Fixed: Other minor fixes and improvements
-#
-# Version 0.4
-# Release Date: 2020-10-26
-# Added: FireEye Endpoint Security
-# Added: McAfee Endpoint Security (ENS)
-# Added: McAfee VirusScan Enterprise (VSE)
-# Added: Get-SecurityProduct
-# Added: Get-RoamingProfile
-# Added: Get-FolderRedirection
-# Update: Comae-Toolkit-3.0.20200224.1 --> Comae-Toolkit-3.0.20200902.2
-# Update: Magnet Forensics Encrypted Disk Detector v2.2.2 --> Magnet Forensics Encrypted Disk Detector v3.0
-#
-# Version: 0.5
-# Release Date: 2021-02-15
-# Added: Trend Micro Apex One
-# Added: PCSystemType
-# Added: TRIM (SSD)
-# Added: Domain/DomainRole
-# Added: DnsClientCache
-# Fixed: Other minor fixes and improvements
-#
-# Version 0.6
-# Release Date: 2021-04-24
-# Added: Microsoft Defender for Endpoint
-# Added: Sophos Endpoint Security and Control (SESC)
-# Update: Magnet Forensics Encrypted Disk Detector v3.0 --> Magnet Forensics Encrypted Disk Detector v3.0.1
-# Fixed: Minor fixes and improvements
-#
-# Version 0.7
-# Release Date: 2021-11-02
-# Update: 7-Zip 9.20 Command Line Version --> 7-Zip 19.00 Standalone Console
-# Added: Custom Windows Title
-# Added: Error Log
-# Added: Self-Signed Code Signature
-# Fixed: Minor fixes and improvements
-#
-# Version: 0.8
-# Release Date: 2022-07-19
-# Added: Creating Memory Snapshot w/ DumpIt (Microsoft Crash Dump)
-# Added: ARM64 Support (DumpIt)
-# Added: Cybereason EDR
-# Update: 7-Zip 19.00 Standalone Console --> 7-Zip 22.00 Standalone Console
-# Update: Magnet Forensics Encrypted Disk Detector v3.0.1 --> Magnet Forensics Encrypted Disk Detector v3.0.2
-# Fixed: Other minor fixes and improvements
-#
-# Version 0.9
-# Release Date: 2022-09-26
-# Added: Pagefile Collection
-# Added: Belkasoft Live RAM Capturer
-# Added: Check for enough disk space to save memory dump file (Physical Memory Size + 12.5%)
-# Added: Active Connections
-# Added: Network ARP Info
-# Added: Prefetch Settings
-# Added: Prefetch List
-# Update: 7-Zip 22.00 Standalone Console --> 7-Zip 22.01 Standalone Console
-# Update: DumpIt 3.0.20200902.2 --> DumpIt 3.5.0
-# Update: Magnet Forensics Encrypted Disk Detector v3.0.2 --> Magnet Forensics Encrypted Disk Detector v3.1.0
-# Fixed: Other minor fixes and improvements
-#
-# Version 0.9.1
-# Release Date: 2022-10-05
-# Fixed: ARM64 Support
-#
-# Version 0.9.2
-# Release Date: 2022-11-26
-# Update: DumpIt 3.5.0 --> DumpIt 3.6.20220824
-#
-# Version 0.9.3
-# Release Date: 2023-01-30
-# Added: Velociraptor
-# Added: Cortex XDR (Palo Alto Networks)
-# Update: DumpIt 3.6.20220824 --> DumpIt 3.6.20230117
-# Fixed: Other minor fixes and improvements
-#
-# Version 1.0
-# Release Date: 2024-01-09
-# Added: Pagefile Collection w/ Magnet RESPONSE v1.7.0
-# Added: Capturing Running Process/Module Information w/ Magnet RESPONSE v1.7.0
-# Added: Error Notification (MessageBox)
-# Added: Improved OS Fingerprinting
-# Added: Improved LastBoot and Uptime (when Fast Startup is enabled)
-# Update: 7-Zip 22.01 Standalone Console --> 7-Zip 23.01 Standalone Console (2023-06-20)
-# Fixed: Other minor fixes and improvements
-#
-#
 #############################################################################################################################################################################################
 
 # Hash Values (Whitelisting)
 
-# 7za.exe                    MD5: 8F57948E69C82BF98704F129C5460576   SHA1: 33E277AF0CEA397252C23D310961F803BE5CDF2B   SHA256: F00836A63BE7EBF14E1B8C40100C59777FE3432506B330927EA1F1B7FD47EE44
+# 7za.exe                    MD5: 86D2E800B12CE5DA07F9BD2832870577   SHA1: FBA06CFB1D2A59D12F3495B301501D4B1D52D7DB   SHA256: 223B873C50380FE9A39F1A22B6ABF8D46DB506E1C08D08312902F6F3CD1F7AC3
 # DumpIt.exe (ARM64)         MD5: 4B39D63B86FFE39BBAE0415C400003C7   SHA1: E08DE257DB9EE0D2AEC8A34433883B025020227B   SHA256: 13BCA00D0042748780B761FB93768754DFD96F48944E6CEC75618CAD93B3B5D5
 # DumpIt.exe (x64)           MD5: 0F10DA3A5EB49D17D73D8E195FE32F85   SHA1: 95F7B26CD15170A3043D6D1F049B2A88FB7A5C5F   SHA256: 6A484C1DB7718949C7027ABDE97E164C7E7E4E4214E3E29FE48AC4364C0CD23C
 # DumpIt.exe (x86)           MD5: 586C57AD0EEA179FCAE4B8BA117F2AB9   SHA1: 31F4ECD04D5A94437A98D09435A2CEAC7DFD57DC   SHA256: F4F353821178BDAF3E29B49DB6E6D80C543081AC7A4312E5FDB5583B96815839
 # EDDv310.exe                MD5: EE4E8097DA5DC038EC3C9B2CB9DB4700   SHA1: 94D250ECA8CD73FB62541E59EC9E6191F71F22A2   SHA256: DE3FC8F41D498D2108DFD52DE8E6200C6271BB45F3FBD6DA5E4C7C648A5BB5B8
-# MagnetRESPONSE.exe         MD5: 3E9E791F3645E79F55CB9B8930E0EFA2   SHA1: 2FFF9D36D021E3F39B75E41AD147EF191F8F82FC   SHA256: 6105794279CEB9A2AD45705F1C6D31A60D0A94A2D16A5181B89ABAD871DAC0AA
+# MagnetRESPONSE.exe         MD5: 2A3BA98713A243F90CD0582C64F13CFB   SHA1: AE4E55C15B338229697485AB6154E6E36CA8539D   SHA256: 341A42C9D95855CC62456EF30ECAD14F922E11CBC8374E83B4F758A6DBECC9DE
 # MRCv120.exe                MD5: 51D286BDF58359417A28E3132ABA957F   SHA1: 6FA7C189B736808C66C82CCF5F4AAA11F995C95A   SHA256: 72DC1BA6DDC9D572D70A194EBDF6027039734ECEE23A02751B0B3B3C4EA430DE
 # PsLoggedon.exe             MD5: E3EA271E748CCDAD6A6D3E692D6F337E   SHA1: F02E06BC439A28AAD6DD957DF8D0022F22798A09   SHA256: D689CB1DBD2E4C06CD15E51A6871C406C595790DDCDCD7DC8D0401C7183720EF
 # PsLoggedon64.exe           MD5: 07ED30D2343BF8914DAAED872B681118   SHA1: 1F5B5E40C420F64AA8E8DE471367E3DECC9763CD   SHA256: FDADB6E15C52C41A31E3C22659DD490D5B616E017D1B1AA6070008CE09ED27EA
@@ -183,11 +68,11 @@
 Function HelpMessage
 {
     Write-Output ""
-    Write-Output "Collect-MemoryDump v1.0 - Automated Creation of Windows Memory Snapshots for DFIR"
-    Write-Output "(c) 2019-2024 Martin Willing at Lethal-Forensics (https://lethal-forensics.com/)"
+    Write-Output "Collect-MemoryDump v1.1.0 - Automated Creation of Windows Memory Snapshots for DFIR"
+    Write-Output "(c) 2025 Martin Willing at Lethal-Forensics (https://lethal-forensics.com/)"
     Write-Output ""
 
-    Write-Output "Usage: .\Collect-MemoryDump.ps1 [-Tool] [--Pagefile]"
+    Write-Output "Usage: .\Collect-MemoryDump.ps1 [-Tool] [--Pagefile] [--Triage]"
     Write-Output ""
     Write-Output "Tools:"
     Write-Output "-Comae        Memory Snapshot will be collected w/ DumpIt (Microsoft Crash Dump)"
@@ -197,7 +82,8 @@ Function HelpMessage
     Write-Output "-Belkasoft    Memory Snapshot will be collected w/ Belkasoft Live Ram Capturer (Raw Physical Memory Dump)"
     Write-Output ""
     Write-Output "Optional:"
-    Write-Output "--Pagefile    In addition, Pagefile(s) will be collected w/ Magnet RESPONSE"       
+    Write-Output "--Pagefile    In addition, Pagefile(s) will be collected w/ Magnet RESPONSE"
+    Write-Output "--Triage      In addition, Forensic Artifacts will be collected w/ Magent RESPONSE"
     Write-Output ""
     Write-Output "Examples:"
     Write-Output ".\Collect-MemoryDump.ps1 -Comae"
@@ -207,6 +93,8 @@ Function HelpMessage
     Write-Output ".\Collect-MemoryDump.ps1 -Belkasoft"
     Write-Output ".\Collect-MemoryDump.ps1 -DumpIt --Pagefile"
     Write-Output ".\Collect-MemoryDump.ps1 -WinPMEM --Pagefile"
+    Write-Output ".\Collect-MemoryDump.ps1 -DumpIt --Pagefile --Triage"
+    Write-Output ".\Collect-MemoryDump.ps1 -Comae --Triage"
     Write-Output ""
     Exit
 }
@@ -219,8 +107,8 @@ if($Args.Count -eq 0)
     HelpMessage
 }
 
-# Check if more than 2 arguments were provided
-if($Args.Count -gt 2)
+# Check if more than 3 arguments were provided
+if($Args.Count -gt 3)
 {
     HelpMessage
 }
@@ -239,11 +127,42 @@ if ($Args[0])
 # Validate $Args[1]
 if ($Args[1])
 {
-    $Pagefile = ($Args[1] | Out-String).Trim()
+    $Argument1 = ($Args[1] | Out-String).Trim()
 
-    if (!($Pagefile -eq "--Pagefile"))
+    if (($Argument1 -ne "--Pagefile") -and ($Argument1 -ne "--Triage"))
     {
         HelpMessage
+    }
+
+    if ($Argument1 -eq "--Pagefile")
+    {
+        $Pagefile = $Argument1
+    }
+
+    if ($Argument1 -eq "--Triage")
+    {
+        $Triage = $Argument1
+    }
+}
+
+# Validate $Args[2]
+if ($Args[2])
+{
+    $Argument2 = ($Args[2] | Out-String).Trim()
+
+    if (($Argument2 -ne "--Pagefile") -and ($Argument2 -ne "--Triage"))
+    {
+        HelpMessage
+    }
+
+    if ($Argument2 -eq "--Pagefile")
+    {
+        $Pagefile = $Argument2
+    }
+
+    if ($Argument2 -eq "--Triage")
+    {
+        $Triage = $Argument2
     }
 }
 
@@ -376,9 +295,16 @@ if ($psISE)
     Exit
 }
 
+# Check if the PowerShell script is being run in PowerShell Core
+if ($PSVersionTable.PSEdition -eq "Core")
+{
+    Write-Output "[Error] This PowerShell script must be run in Windows PowerShell."
+    Exit
+}
+
 # Windows Title
 $script:DefaultWindowsTitle = $Host.UI.RawUI.WindowTitle
-$Host.UI.RawUI.WindowTitle = "Collect-MemoryDump v1.0 - Automated Creation of Windows Memory Snapshots for DFIR"
+$Host.UI.RawUI.WindowTitle = "Collect-MemoryDump v1.1.0 - Automated Creation of Windows Memory Snapshots for DFIR"
 
 # Add the required MessageBox class (Windows PowerShell)
 Add-Type -AssemblyName System.Windows.Forms
@@ -403,7 +329,7 @@ Function Test-RegistryValue
 }
 
 # Get Start Time
-$startTime = (Get-Date)
+$StartTime = (Get-Date)
 
 # Creating Output Directory
 New-Item "$OUTPUT_FOLDER" -ItemType Directory -Force | Out-Null
@@ -427,20 +353,20 @@ Write-Output "$Logo" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
 Write-Output "" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
 
 # Header
-Write-Output "Collect-MemoryDump v1.0 - Automated Creation of Windows Memory Snapshots for DFIR"
-Write-Output "(c) 2019-2024 Martin Willing at Lethal-Forensics (https://lethal-forensics.com/)"
+Write-Output "Collect-MemoryDump v1.1.0 - Automated Creation of Windows Memory Snapshots for DFIR"
+Write-Output "$([char]0x00A9) 2025 Martin Willing at Lethal-Forensics (https://lethal-forensics.com/)"
 Write-Output ""
 
-Write-Output "Collect-MemoryDump v1.0 - Automated Creation of Windows Memory Snapshots for DFIR" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
-Write-Output "(c) 2019-2024 Martin Willing at Lethal-Forensics (https://lethal-forensics.com/)" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+Write-Output "Collect-MemoryDump v1.1.0 - Automated Creation of Windows Memory Snapshots for DFIR" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+Write-Output "$([char]0x00A9) 2025 Martin Willing at Lethal-Forensics (https://lethal-forensics.com/)" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
 Write-Output "" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
 
 # Acquisition date (ISO 8601)
-$AcquisitionDate = $Date -replace “T”, " " # YYYY-MM-DD hh:mm:ss
-Write-Output "Acquisition date: $AcquisitionDate UTC"
+$AcquisitionStartTime = $Date -replace "T", " " # YYYY-MM-DD hh:mm:ss
+Write-Output "Acquisition date: $AcquisitionStartTime UTC"
 Write-Output ""
 
-Write-Output "Acquisition date: $AcquisitionDate UTC" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+Write-Output "Acquisition date: $AcquisitionStartTime UTC" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
 Write-Output "" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
 
 # Hostname
@@ -464,7 +390,7 @@ Function Get-Pagefile
         $certUtil = "$env:SystemDrive\Windows\System32\certutil.exe"
         $MD5 = (((& $certUtil -hashfile "$MagnetRESPONSE" MD5) -replace '\s', '' | Select-String -Pattern "^[0-9a-f]{32}$" | Out-String).Trim()).ToUpper()
 
-        if ($MD5 -eq "3E9E791F3645E79F55CB9B8930E0EFA2")
+        if ($MD5 -eq "2A3BA98713A243F90CD0582C64F13CFB")
         {
             # PageFileInfo
             New-Item "$OUTPUT_FOLDER\Memory\Pagefile\PageFileInfo" -ItemType Directory -Force | Out-Null
@@ -602,10 +528,10 @@ Function Get-Pagefile
             # .NET 4.0 Framework
             if (Test-Path "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full")
             {
-                Write-Output "[Info]  Collecting Pagefile(s) [approx. 1-20 min]  ... "
-                Write-Output "[Info]  Collecting Pagefile(s) [approx. 1-20 min]  ... " | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                Write-Output "[Info]  Collecting Pagefile(s) [approx. 1-20 min] ..."
+                Write-Output "[Info]  Collecting Pagefile(s) [approx. 1-20 min] ..." | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
                 $StartTime_MagnetRESPONSE = (Get-Date)
-                & $MagnetRESPONSE /accepteula /nodiagnosticdata /unattended /caseref:"Collect-MemoryDump-v1.0" /output:"$OUTPUT_FOLDER\Memory\Pagefile" /capturepagefile /capturevolatile /captureextendedprocessinfo /saveprocfiles
+                & $MagnetRESPONSE /accepteula /nodiagnosticdata /unattended /caseref:"Collect-MemoryDump-v1.1.0" /output:"$OUTPUT_FOLDER\Memory\Pagefile" /capturepagefile /capturevolatile /captureextendedprocessinfo /saveprocfiles
                 Wait-Process -Name "MagnetRESPONSE"
                 Start-Sleep -Seconds 1
                 $EndTime_MagnetRESPONSE = (Get-Date)
@@ -629,8 +555,8 @@ Function Get-Pagefile
                 {
                     if (Get-Command Get-FileHash -ErrorAction SilentlyContinue)
                     {
-                        Write-Output "[Info]  Calculating MD5 checksum of $env:COMPUTERNAME.zip [approx. 1-2 min] ... "
-                        Write-Output "[Info]  Calculating MD5 checksum of $env:COMPUTERNAME.zip [approx. 1-2 min] ... " | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                        Write-Output "[Info]  Calculating MD5 checksum of $env:COMPUTERNAME.zip [approx. 1-2 min] ..."
+                        Write-Output "[Info]  Calculating MD5 checksum of $env:COMPUTERNAME.zip [approx. 1-2 min] ..." | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
                         $StartTime_MD5 = (Get-Date)
                         $MD5 = (Get-FileHash -LiteralPath "$OUTPUT_FOLDER\Memory\Pagefile\Pagefile\$env:COMPUTERNAME.zip" -Algorithm MD5).Hash
                         Write-Output "[Info]  MD5 Hash: $MD5"
@@ -886,6 +812,135 @@ Function Get-Pagefile
 }
 
 #endregion Pagefile
+
+#############################################################################################################################################################################################
+
+#region Triage
+
+# Collects the following files/locations:# - Amcache data# - AnyDesk Logs
+# - Chrome Browser History
+# - Edge Browser History# - Firefox Browser History
+# - Firewall Logs# - Jumplist files
+# - LogMeIn Logs
+# - Master File Table ($MFT)# - NTUSER.DAT files
+# - PowerShell history
+# - Prefetch files# - Program Compatibility Assistant files# - Recent Link files
+# - Recycle Bin
+# - Registry Hives# - Scheduled Tasks
+# - SRUM data
+# - TeamViewer Logs
+# - UsrClass.dat files
+# - Windows Event Logs
+# - Windows Timeline data
+
+Function Get-Triage
+{
+    # Magnet RESPONSE
+    if (Test-Path "$MagnetRESPONSE") 
+    {
+        # Verify File Integrity
+        $certUtil = "$env:SystemDrive\Windows\System32\certutil.exe"
+        $MD5 = (((& $certUtil -hashfile "$MagnetRESPONSE" MD5) -replace '\s', '' | Select-String -Pattern "^[0-9a-f]{32}$" | Out-String).Trim()).ToUpper()
+
+        if ($MD5 -eq "2A3BA98713A243F90CD0582C64F13CFB")
+        {
+            # Triage
+            New-Item "$OUTPUT_FOLDER\Triage" -ItemType Directory -Force | Out-Null
+
+            # Collecting Artifacts
+
+            # .NET 4.0 Framework
+            if (Test-Path "HKLM:SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full")
+            {
+                Write-Output "[Info]  Collecting Forensic Artifacts [approx. 1-15 min] ... "
+                Write-Output "[Info]  Collecting Forensic Artifacts [approx. 1-15 min] ... " | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                $StartTime_Triage = (Get-Date)
+                & $MagnetRESPONSE /accepteula /nodiagnosticdata /unattended /caseref:"Collect-MemoryDump-v1.1.0" /output:"$OUTPUT_FOLDER\Triage" /capturesystemfiles /saveprocfiles
+                Wait-Process -Name "MagnetRESPONSE"
+                Start-Sleep -Seconds 1
+                $EndTime_Triage = (Get-Date)
+                $Time_Triage = ($EndTime_Triage-$StartTime_Triage)
+                ('Triage Collection duration: {0} h {1} min {2} sec' -f $Time_Triage.Hours, $Time_Triage.Minutes, $Time_Triage.Seconds) >> "$OUTPUT_FOLDER\Triage\Stats.txt"
+
+                # Rename Archive
+                if (Test-Path "$OUTPUT_FOLDER\Triage\*\*.zip")
+                {
+                    Get-ChildItem -Path "$OUTPUT_FOLDER\Triage\*\*.zip" | Rename-Item -NewName {"$env:COMPUTERNAME.zip"}
+                }
+
+                # Rename Directory
+                if (Test-Path "$OUTPUT_FOLDER\Triage\*\*.zip")
+                {
+                    Get-ChildItem "$OUTPUT_FOLDER\Triage" | Where-Object {($_.FullName -match "MagnetRESPONSE")} | Rename-Item -NewName {"Artifacts"}
+                }
+
+                # MD5 Calculation
+                if (Test-Path "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip") 
+                {
+                    if (Get-Command Get-FileHash -ErrorAction SilentlyContinue)
+                    {
+                        Write-Output "[Info]  Calculating MD5 checksum of $env:COMPUTERNAME.zip [approx. 1-2 min] ... "
+                        Write-Output "[Info]  Calculating MD5 checksum of $env:COMPUTERNAME.zip [approx. 1-2 min] ... " | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                        $StartTime_MD5 = (Get-Date)
+                        $MD5 = (Get-FileHash -LiteralPath "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip" -Algorithm MD5).Hash
+                        Write-Output "[Info]  MD5 Hash: $MD5"
+                        Write-Output "[Info]  MD5 Hash: $MD5" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                        $MD5 > "$OUTPUT_FOLDER\Triage\Artifacts\MD5.txt"
+                        $EndTime_MD5 = (Get-Date)
+                        $Time_MD5 = ($EndTime_MD5-$StartTime_MD5)
+                        ('MD5 Calculation duration:   {0} h {1} min {2} sec' -f $Time_MD5.Hours, $Time_MD5.Minutes, $Time_MD5.Seconds) >> "$OUTPUT_FOLDER\Triage\Stats.txt"
+                    }
+                }
+
+                # Get File Size of "$env:COMPUTERNAME.zip"
+                if (Test-Path "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip") 
+                {
+                    $Length = $Length = (Get-Item -Path "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip").Length
+                    $Size = Get-FileSize($Length)
+                    Write-Output "[Info]  Archive Size: $Size"
+                    Write-Output "[Info]  Archive Size: $Size" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                }
+
+                # Create Time (ISO 8601)
+                if (Test-Path "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip") 
+                {
+                    $CreationTime = ((Get-Item -LiteralPath "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip").CreationTimeUtc).ToString("yyyy-MM-dd HH:mm:ss UTC")
+                    Write-Output "[Info]  Create Time: $CreationTime"
+                    Write-Output "[Info]  Create Time: $CreationTime" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                }
+
+                # Last Modified Time (ISO 8601)
+                if (Test-Path "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip") 
+                {
+                    $LastWriteTime = ((Get-Item -LiteralPath "$OUTPUT_FOLDER\Triage\Artifacts\$env:COMPUTERNAME.zip").LastWriteTimeUtc).ToString("yyyy-MM-dd HH:mm:ss UTC")
+                    Write-Output "[Info]  Last Modified Time: $LastWriteTime"
+                    Write-Output "[Info]  Last Modified Time: $LastWriteTime" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+                }
+            }
+            else
+            {
+                Write-Output "[Error] NET Framework v4 NOT found. Triage Collection will be skipped ..."
+                Write-Output "[Error] NET Framework v4 NOT found. Triage Collection will be skipped ..." | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+            }
+        }
+        else
+        {
+            Write-Output "[Error] File Hash does NOT match."
+            Write-Output "[Error] File Hash does NOT match." | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+            $Host.UI.RawUI.WindowTitle = "$DefaultWindowsTitle"
+            Exit
+        }
+    }
+    else
+    {
+        Write-Output "[Error] MagnetRESPONSE.exe NOT found."
+        Write-Output "[Error] MagnetRESPONSE.exe NOT found." | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+        $Host.UI.RawUI.WindowTitle = "$DefaultWindowsTitle"
+        Exit
+    }
+}
+
+#endregion Triage
 
 #############################################################################################################################################################################################
 
@@ -1193,12 +1248,20 @@ Function New-DumpItSnapshot
                     $LastWriteTime = ((Get-Item -LiteralPath "$OUTPUT_FOLDER\Memory\DumpIt\$env:COMPUTERNAME.7z").LastWriteTimeUtc).ToString("yyyy-MM-dd HH:mm:ss UTC")
                     Write-Output "[Info]  Last Modified Time: $LastWriteTime"
                     Write-Output "[Info]  Last Modified Time: $LastWriteTime" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+
+                    # TODO
                 }
             }
             else
             {
                 Write-Output "[Error] 7za.exe NOT found."
                 Write-Output "[Error] 7za.exe NOT found." | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+            }
+
+            # Triage Collection
+            if ($Triage -eq "--Triage")
+            {
+                Get-Triage
             }
         }
         else
@@ -2543,6 +2606,12 @@ if (!($env:PROCESSOR_ARCHITECTURE -eq "ARM64"))
     & $PsLoggedOn -accepteula > "$OUTPUT_FOLDER\System-Info\PsLoggedOn.txt"
 }
 
+# Local Users
+if (Get-Command -CommandType Cmdlet Get-LocalUser -ErrorAction SilentlyContinue)
+{
+    Get-LocalUser | Format-Table | Out-File "$OUTPUT_FOLDER\System-Info\LocalUsers.txt" -Encoding UTF8
+}
+
 # Active Users
 if (Get-Command -CommandType Application query -ErrorAction SilentlyContinue)
 {
@@ -2732,6 +2801,16 @@ else
     netstat | Out-File "$OUTPUT_FOLDER\System-Info\netstat.txt"
 }
 
+# Opened Files (remotely through a shared folder)
+if (Get-Command -Name openfiles -CommandType Application -ErrorAction SilentlyContinue)
+{
+    # TXT
+    openfiles | Out-File "$OUTPUT_FOLDER\System-Info\OpenFiles.txt" -Encoding UTF8
+
+    # CSV
+    (openfiles) -split "\n" -replace '\s\s+', ',' | Out-File "$OUTPUT_FOLDER\System-Info\OpenFiles.csv" -Encoding UTF8
+}
+
 # DNS Cache (useful for recent web history)
 if (Get-Command -Name Get-DnsClientCache -CommandType Function -ErrorAction SilentlyContinue)
 {
@@ -2785,7 +2864,7 @@ if (Get-Command -Name Get-DnsClientCache -CommandType Function -ErrorAction Sile
 }
 else
 {
-    ipconfig /displaydns | Out-File "$OUTPUT_FOLDER\System-Info\ipconfig-displaydns.txt"
+    ipconfig /displaydns | Out-File "$OUTPUT_FOLDER\System-Info\ipconfig-displaydns.txt" -Encoding UTF8
 }
 
 # Network ARP Info
@@ -2795,7 +2874,7 @@ if (Get-Command -Name Get-NetNeighbor -CommandType Function -ErrorAction Silentl
 }
 else
 {
-    arp -a | Out-File "$OUTPUT_FOLDER\System-Info\Network-ARP-Info.txt"
+    arp -a | Out-File "$OUTPUT_FOLDER\System-Info\Network-ARP-Info.txt" -Encoding UTF8
 }
 
 # IP Routing Info
@@ -2805,7 +2884,7 @@ if (Get-Command -Name Get-NetRoute -CommandType Function -ErrorAction SilentlyCo
 }
 else
 {
-    route print | Out-File "$OUTPUT_FOLDER\System-Info\IP-Routing-Info.txt"
+    route print | Out-File "$OUTPUT_FOLDER\System-Info\IP-Routing-Info.txt" -Encoding UTF8
 }
 
 # Prefetch Settings
@@ -3238,10 +3317,23 @@ switch($PCSystemType)
 
 Write-Output "$EnumPCSystemType" | Out-File "$OUTPUT_FOLDER\System-Info\PCSystemType.txt"
 
+# Shadow Copies
+if (Get-Command -CommandType Cmdlet Get-CimInstance -ErrorAction SilentlyContinue)
+{
+    Get-CimInstance Win32_ShadowCopy | Out-File "$OUTPUT_FOLDER\System-Info\ShadowCopies.txt" -Encoding UTF8
+    Get-CimInstance Win32_ShadowCopy | ConvertTo-Csv -NoTypeInformation | Out-File "$OUTPUT_FOLDER\System-Info\ShadowCopies.csv" -Encoding UTF8
+}
+
+# Plug and Play (PnP) Devices
+if (Get-Command -CommandType Function Get-PnpDevice -ErrorAction SilentlyContinue)
+{
+    Get-PnpDevice | Export-Csv -Path "$OUTPUT_FOLDER\System-Info\Get-PnpDevice.csv" -NoTypeInformation -Encoding UTF8 2> $null
+}
+
 # Domain
 if ((Get-WmiObject -Class Win32_ComputerSystem).PartOfDomain -eq $true)
 {
-    (Get-WmiObject Win32_ComputerSystem).Domain | Out-File "$OUTPUT_FOLDER\System-Info\Domain.txt"
+    (Get-WmiObject Win32_ComputerSystem).Domain | Out-File "$OUTPUT_FOLDER\System-Info\Domain.txt" -Encoding UTF8
 }
 
 # DomainRole
@@ -3260,14 +3352,79 @@ switch($DomainRole)
 Write-Output "$EnumDomainRole" | Out-File "$OUTPUT_FOLDER\System-Info\DomainRole.txt"
 
 # Enumerate Active SMB Sessions 
-if (Get-Command Get-SmbSession -ErrorAction SilentlyContinue) 
+if (Get-Command Get-SmbSession -CommandType Function -ErrorAction SilentlyContinue) 
 {
-    Get-SmbSession | Out-File "$OUTPUT_FOLDER\System-Info\Get-SmbSession.txt"
+    Get-SmbSession | Out-File "$OUTPUT_FOLDER\System-Info\Get-SmbSession.txt" -Encoding UTF8
+}
+
+# RDP Sessions
+if (Get-Command -CommandType Application qwinsta -ErrorAction SilentlyContinue)
+{
+    qwinsta /server:localhost > "$OUTPUT_FOLDER\System-Info\RDP-Sessions.txt"
+    (qwinsta /server:localhost) -split "\n" -replace '\s\s+', ',' | Out-File "$OUTPUT_FOLDER\System-Info\RDP-Sessions.csv" -Encoding UTF8
 }
 
 # IPv4
 $IPv4 = Get-WmiObject -Class Win32_NetworkAdapterConfiguration | Where-Object {$_.IPAddress} | Select-Object -ExpandProperty IPAddress | Where-Object {$_ -notlike "*:*"}
-Write-Output "$IPv4" | Out-File "$OUTPUT_FOLDER\System-Info\IPv4.txt"
+Write-Output "$IPv4" | Out-File "$OUTPUT_FOLDER\System-Info\IPv4.txt" -Encoding UTF8
+
+# IP Address Configuration
+if (Get-Command Get-NetIPAddress -CommandType Function -ErrorAction SilentlyContinue) 
+{
+    Get-NetIPAddress | ConvertTo-Csv -NoTypeInformation | Out-File "$OUTPUT_FOLDER\System-Info\Get-NetIPAddress.csv" -Encoding UTF8
+}
+
+# Microsoft Protection Logs
+Write-Output "[Info]  Collecting Microsoft Protection Logs (MPLogs) ..."
+New-Item "$OUTPUT_FOLDER\System-Info\MPLogs" -ItemType Directory -Force | Out-Null
+
+# MPLogs
+if (Test-Path "$env:ALLUSERSPROFILE\Microsoft\Windows Defender\Support\*MPLog-*.log")
+{
+    Copy-Item "$env:ALLUSERSPROFILE\Microsoft\Windows Defender\Support\*MPLog-*.log" -Destination "$OUTPUT_FOLDER\System-Info\MPLogs"
+                
+    # Count
+    $Count = (Get-ChildItem -Path "$OUTPUT_FOLDER\System-Info\MPLogs" -Filter "*MPLog-*.log" | Measure-Object).Count
+    Write-Output "[Info]  $Count MPLog(s) found"
+}
+
+# MPDetection
+if (Test-Path "$env:ALLUSERSPROFILE\Microsoft\Windows Defender\Support\*MPDetection-*.log")
+{
+    Copy-Item "$env:ALLUSERSPROFILE\Microsoft\Windows Defender\Support\*MPDetection-*.log" -Destination "$OUTPUT_FOLDER\System-Info\MPLogs"
+}
+
+# Windows Installer
+if (Get-Command -CommandType Cmdlet Get-WinEvent -ErrorAction SilentlyContinue)
+{
+    # TXT
+    Get-WinEvent -ProviderName MsiInstaller | Where-Object Id -eq "1033"  | Select-Object TimeCreated,Message | Format-List * | Out-File "$OUTPUT_FOLDER\System-Info\WindowsInstaller.txt" -Encoding UTF8
+
+    # Custom CSV
+    $Installations = Get-WinEvent -ProviderName MsiInstaller | Where-Object Id -eq "1033"
+    
+    $Results = [Collections.Generic.List[PSObject]]::new()
+    ForEach($Installation in $Installations)
+    {
+        $TimeCreated = $Installation | Select-Object -ExpandProperty TimeCreated
+        $Message     = $Installation | Select-Object -ExpandProperty Message
+
+        $Line = [PSCustomObject]@{
+        "TimeCreated"    = (Get-Date $TimeCreated).ToString("yyyy-MM-dd HH:mm:ss")
+        "UserId"         = $Installation.UserId
+        "Manufacturer"   = $Message | ForEach-Object{($_ -split ":\s+")[4]} | ForEach-Object{($_ -split "\.\s+")[0]}
+        "ProductName"    = $Message | ForEach-Object{($_ -split ":\s+")[1]} | ForEach-Object{($_ -split "\.\s+")[0]}
+        "Version"        = $Message | ForEach-Object{($_ -split ":\s+")[2]} | ForEach-Object{($_ -split "\.\s+")[0]}
+        "Language"       = $Message | ForEach-Object{($_ -split ":\s+")[3]} | ForEach-Object{($_ -split "\.")[0]}
+        "Status"         = $Message | ForEach-Object{($_ -split ":\s+")[5]} | ForEach-Object{($_ -split "\.")[0]}
+        "Message"        = $Message
+        }
+
+        $Results.Add($Line)
+    }
+
+    $Results | Export-Csv -Path "$OUTPUT_FOLDER\System-Info\WindowsInstaller.csv" -NoTypeInformation -Encoding UTF8
+}
 
 #endregion SystemInfo
 
@@ -3374,6 +3531,7 @@ else
 
 # Get End Time
 $endTime = (Get-Date)
+$AcquisitionEndTime = [datetime]::Now.ToUniversalTime().ToString("yyyy-MM-dd HH:mm:ss")
 
 # Echo Time elapsed
 Write-Output ""
@@ -3385,6 +3543,11 @@ $Time = ($endTime-$startTime)
 $ElapsedTime = ('Overall acquisition duration: {0} h {1} min {2} sec' -f $Time.Hours, $Time.Minutes, $Time.Seconds)
 Write-Output "$ElapsedTime"
 Write-Output "$ElapsedTime" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+
+# Acquisition Duration (ISO 8601)
+Write-Output "" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+Write-Output "Acquisition Start    : $AcquisitionStartTime UTC" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
+Write-Output "Acquisition Finished : $AcquisitionEndTime UTC" | Out-File "$LOG_DIR\$Timestamp-Logfile.txt" -Append
 
 # MessageBox UI
 if ($Pagefile -eq "--Pagefile")
@@ -3400,7 +3563,17 @@ if ($Pagefile -eq "--Pagefile")
     }
     else
     {
-        $MessageBody = "Memory Snapshot created successfully.`n`nPagefile Collection completed."
+        if ($Triage -eq "--Triage")
+        {
+            # Memory Snapshot + Pagefile Collection (Optional) + Triage Collection (Optional)
+            $MessageBody = "Memory Snapshot created successfully.`nPagefile Collection completed.`nTriage Collection completed."
+        }
+        else
+        {
+            # Memory Snapshot + Pagefile Collection (Optional)
+            $MessageBody = "Memory Snapshot created successfully.`n`nPagefile Collection completed."
+        }
+
         $MessageTitle = "Collect-MemoryDump.ps1 (https://lethal-forensics.com/)"
         $ButtonType = "OK"
         $MessageIcon = "Information"
@@ -3419,7 +3592,17 @@ else
     }
     else
     {
-        $MessageBody = "Status: Memory Snapshot created successfully."
+        if ($Triage -eq "--Triage")
+        {
+            # Triage Collection (Optional)
+            $MessageBody = "Status: Memory Snapshot created successfully.`n`nTriage Collection completed."
+        }
+        else
+        {
+            # Memory Snapshot
+            $MessageBody = "Status: Memory Snapshot created successfully."
+        }
+        
         $MessageTitle = "Collect-MemoryDump.ps1 (https://lethal-forensics.com/)"
         $ButtonType = "OK"
         $MessageIcon = "Information"
@@ -3440,3 +3623,240 @@ if ($Result -eq "OK" )
 
 #############################################################################################################################################################################################
 #############################################################################################################################################################################################
+
+# SIG # Begin signature block
+# MIIrxQYJKoZIhvcNAQcCoIIrtjCCK7ICAQExCzAJBgUrDgMCGgUAMGkGCisGAQQB
+# gjcCAQSgWzBZMDQGCisGAQQBgjcCAR4wJgIDAQAABBAfzDtgWUsITrck0sYpfvNR
+# AgEAAgEAAgEAAgEAAgEAMCEwCQYFKw4DAhoFAAQUFKhV4Zpeb7Zuk4Y1Ll35ZmHy
+# 8xOggiT/MIIFbzCCBFegAwIBAgIQSPyTtGBVlI02p8mKidaUFjANBgkqhkiG9w0B
+# AQwFADB7MQswCQYDVQQGEwJHQjEbMBkGA1UECAwSR3JlYXRlciBNYW5jaGVzdGVy
+# MRAwDgYDVQQHDAdTYWxmb3JkMRowGAYDVQQKDBFDb21vZG8gQ0EgTGltaXRlZDEh
+# MB8GA1UEAwwYQUFBIENlcnRpZmljYXRlIFNlcnZpY2VzMB4XDTIxMDUyNTAwMDAw
+# MFoXDTI4MTIzMTIzNTk1OVowVjELMAkGA1UEBhMCR0IxGDAWBgNVBAoTD1NlY3Rp
+# Z28gTGltaXRlZDEtMCsGA1UEAxMkU2VjdGlnbyBQdWJsaWMgQ29kZSBTaWduaW5n
+# IFJvb3QgUjQ2MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAjeeUEiIE
+# JHQu/xYjApKKtq42haxH1CORKz7cfeIxoFFvrISR41KKteKW3tCHYySJiv/vEpM7
+# fbu2ir29BX8nm2tl06UMabG8STma8W1uquSggyfamg0rUOlLW7O4ZDakfko9qXGr
+# YbNzszwLDO/bM1flvjQ345cbXf0fEj2CA3bm+z9m0pQxafptszSswXp43JJQ8mTH
+# qi0Eq8Nq6uAvp6fcbtfo/9ohq0C/ue4NnsbZnpnvxt4fqQx2sycgoda6/YDnAdLv
+# 64IplXCN/7sVz/7RDzaiLk8ykHRGa0c1E3cFM09jLrgt4b9lpwRrGNhx+swI8m2J
+# mRCxrds+LOSqGLDGBwF1Z95t6WNjHjZ/aYm+qkU+blpfj6Fby50whjDoA7NAxg0P
+# OM1nqFOI+rgwZfpvx+cdsYN0aT6sxGg7seZnM5q2COCABUhA7vaCZEao9XOwBpXy
+# bGWfv1VbHJxXGsd4RnxwqpQbghesh+m2yQ6BHEDWFhcp/FycGCvqRfXvvdVnTyhe
+# Be6QTHrnxvTQ/PrNPjJGEyA2igTqt6oHRpwNkzoJZplYXCmjuQymMDg80EY2NXyc
+# uu7D1fkKdvp+BRtAypI16dV60bV/AK6pkKrFfwGcELEW/MxuGNxvYv6mUKe4e7id
+# FT/+IAx1yCJaE5UZkADpGtXChvHjjuxf9OUCAwEAAaOCARIwggEOMB8GA1UdIwQY
+# MBaAFKARCiM+lvEH7OKvKe+CpX/QMKS0MB0GA1UdDgQWBBQy65Ka/zWWSC8oQEJw
+# IDaRXBeF5jAOBgNVHQ8BAf8EBAMCAYYwDwYDVR0TAQH/BAUwAwEB/zATBgNVHSUE
+# DDAKBggrBgEFBQcDAzAbBgNVHSAEFDASMAYGBFUdIAAwCAYGZ4EMAQQBMEMGA1Ud
+# HwQ8MDowOKA2oDSGMmh0dHA6Ly9jcmwuY29tb2RvY2EuY29tL0FBQUNlcnRpZmlj
+# YXRlU2VydmljZXMuY3JsMDQGCCsGAQUFBwEBBCgwJjAkBggrBgEFBQcwAYYYaHR0
+# cDovL29jc3AuY29tb2RvY2EuY29tMA0GCSqGSIb3DQEBDAUAA4IBAQASv6Hvi3Sa
+# mES4aUa1qyQKDKSKZ7g6gb9Fin1SB6iNH04hhTmja14tIIa/ELiueTtTzbT72ES+
+# BtlcY2fUQBaHRIZyKtYyFfUSg8L54V0RQGf2QidyxSPiAjgaTCDi2wH3zUZPJqJ8
+# ZsBRNraJAlTH/Fj7bADu/pimLpWhDFMpH2/YGaZPnvesCepdgsaLr4CnvYFIUoQx
+# 2jLsFeSmTD1sOXPUC4U5IOCFGmjhp0g4qdE2JXfBjRkWxYhMZn0vY86Y6GnfrDyo
+# XZ3JHFuu2PMvdM+4fvbXg50RlmKarkUT2n/cR/vfw1Kf5gZV6Z2M8jpiUbzsJA8p
+# 1FiAhORFe1rYMIIGFDCCA/ygAwIBAgIQeiOu2lNplg+RyD5c9MfjPzANBgkqhkiG
+# 9w0BAQwFADBXMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVk
+# MS4wLAYDVQQDEyVTZWN0aWdvIFB1YmxpYyBUaW1lIFN0YW1waW5nIFJvb3QgUjQ2
+# MB4XDTIxMDMyMjAwMDAwMFoXDTM2MDMyMTIzNTk1OVowVTELMAkGA1UEBhMCR0Ix
+# GDAWBgNVBAoTD1NlY3RpZ28gTGltaXRlZDEsMCoGA1UEAxMjU2VjdGlnbyBQdWJs
+# aWMgVGltZSBTdGFtcGluZyBDQSBSMzYwggGiMA0GCSqGSIb3DQEBAQUAA4IBjwAw
+# ggGKAoIBgQDNmNhDQatugivs9jN+JjTkiYzT7yISgFQ+7yavjA6Bg+OiIjPm/N/t
+# 3nC7wYUrUlY3mFyI32t2o6Ft3EtxJXCc5MmZQZ8AxCbh5c6WzeJDB9qkQVa46xiY
+# Epc81KnBkAWgsaXnLURoYZzksHIzzCNxtIXnb9njZholGw9djnjkTdAA83abEOHQ
+# 4ujOGIaBhPXG2NdV8TNgFWZ9BojlAvflxNMCOwkCnzlH4oCw5+4v1nssWeN1y4+R
+# laOywwRMUi54fr2vFsU5QPrgb6tSjvEUh1EC4M29YGy/SIYM8ZpHadmVjbi3Pl8h
+# JiTWw9jiCKv31pcAaeijS9fc6R7DgyyLIGflmdQMwrNRxCulVq8ZpysiSYNi79tw
+# 5RHWZUEhnRfs/hsp/fwkXsynu1jcsUX+HuG8FLa2BNheUPtOcgw+vHJcJ8HnJCrc
+# UWhdFczf8O+pDiyGhVYX+bDDP3GhGS7TmKmGnbZ9N+MpEhWmbiAVPbgkqykSkzyY
+# Vr15OApZYK8CAwEAAaOCAVwwggFYMB8GA1UdIwQYMBaAFPZ3at0//QET/xahbIIC
+# L9AKPRQlMB0GA1UdDgQWBBRfWO1MMXqiYUKNUoC6s2GXGaIymzAOBgNVHQ8BAf8E
+# BAMCAYYwEgYDVR0TAQH/BAgwBgEB/wIBADATBgNVHSUEDDAKBggrBgEFBQcDCDAR
+# BgNVHSAECjAIMAYGBFUdIAAwTAYDVR0fBEUwQzBBoD+gPYY7aHR0cDovL2NybC5z
+# ZWN0aWdvLmNvbS9TZWN0aWdvUHVibGljVGltZVN0YW1waW5nUm9vdFI0Ni5jcmww
+# fAYIKwYBBQUHAQEEcDBuMEcGCCsGAQUFBzAChjtodHRwOi8vY3J0LnNlY3RpZ28u
+# Y29tL1NlY3RpZ29QdWJsaWNUaW1lU3RhbXBpbmdSb290UjQ2LnA3YzAjBggrBgEF
+# BQcwAYYXaHR0cDovL29jc3Auc2VjdGlnby5jb20wDQYJKoZIhvcNAQEMBQADggIB
+# ABLXeyCtDjVYDJ6BHSVY/UwtZ3Svx2ImIfZVVGnGoUaGdltoX4hDskBMZx5NY5L6
+# SCcwDMZhHOmbyMhyOVJDwm1yrKYqGDHWzpwVkFJ+996jKKAXyIIaUf5JVKjccev3
+# w16mNIUlNTkpJEor7edVJZiRJVCAmWAaHcw9zP0hY3gj+fWp8MbOocI9Zn78xvm9
+# XKGBp6rEs9sEiq/pwzvg2/KjXE2yWUQIkms6+yslCRqNXPjEnBnxuUB1fm6bPAV+
+# Tsr/Qrd+mOCJemo06ldon4pJFbQd0TQVIMLv5koklInHvyaf6vATJP4DfPtKzSBP
+# kKlOtyaFTAjD2Nu+di5hErEVVaMqSVbfPzd6kNXOhYm23EWm6N2s2ZHCHVhlUgHa
+# C4ACMRCgXjYfQEDtYEK54dUwPJXV7icz0rgCzs9VI29DwsjVZFpO4ZIVR33LwXyP
+# DbYFkLqYmgHjR3tKVkhh9qKV2WCmBuC27pIOx6TYvyqiYbntinmpOqh/QPAnhDge
+# xKG9GX/n1PggkGi9HCapZp8fRwg8RftwS21Ln61euBG0yONM6noD2XQPrFwpm3Gc
+# uqJMf0o8LLrFkSLRQNwxPDDkWXhW+gZswbaiie5fd/W2ygcto78XCSPfFWveUOSZ
+# 5SqK95tBO8aTHmEa4lpJVD7HrTEn9jb1EGvxOb1cnn0CMIIGGjCCBAKgAwIBAgIQ
+# Yh1tDFIBnjuQeRUgiSEcCjANBgkqhkiG9w0BAQwFADBWMQswCQYDVQQGEwJHQjEY
+# MBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMS0wKwYDVQQDEyRTZWN0aWdvIFB1Ymxp
+# YyBDb2RlIFNpZ25pbmcgUm9vdCBSNDYwHhcNMjEwMzIyMDAwMDAwWhcNMzYwMzIx
+# MjM1OTU5WjBUMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVk
+# MSswKQYDVQQDEyJTZWN0aWdvIFB1YmxpYyBDb2RlIFNpZ25pbmcgQ0EgUjM2MIIB
+# ojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAmyudU/o1P45gBkNqwM/1f/bI
+# U1MYyM7TbH78WAeVF3llMwsRHgBGRmxDeEDIArCS2VCoVk4Y/8j6stIkmYV5Gej4
+# NgNjVQ4BYoDjGMwdjioXan1hlaGFt4Wk9vT0k2oWJMJjL9G//N523hAm4jF4UjrW
+# 2pvv9+hdPX8tbbAfI3v0VdJiJPFy/7XwiunD7mBxNtecM6ytIdUlh08T2z7mJEXZ
+# D9OWcJkZk5wDuf2q52PN43jc4T9OkoXZ0arWZVeffvMr/iiIROSCzKoDmWABDRzV
+# /UiQ5vqsaeFaqQdzFf4ed8peNWh1OaZXnYvZQgWx/SXiJDRSAolRzZEZquE6cbcH
+# 747FHncs/Kzcn0Ccv2jrOW+LPmnOyB+tAfiWu01TPhCr9VrkxsHC5qFNxaThTG5j
+# 4/Kc+ODD2dX/fmBECELcvzUHf9shoFvrn35XGf2RPaNTO2uSZ6n9otv7jElspkfK
+# 9qEATHZcodp+R4q2OIypxR//YEb3fkDn3UayWW9bAgMBAAGjggFkMIIBYDAfBgNV
+# HSMEGDAWgBQy65Ka/zWWSC8oQEJwIDaRXBeF5jAdBgNVHQ4EFgQUDyrLIIcouOxv
+# SK4rVKYpqhekzQwwDgYDVR0PAQH/BAQDAgGGMBIGA1UdEwEB/wQIMAYBAf8CAQAw
+# EwYDVR0lBAwwCgYIKwYBBQUHAwMwGwYDVR0gBBQwEjAGBgRVHSAAMAgGBmeBDAEE
+# ATBLBgNVHR8ERDBCMECgPqA8hjpodHRwOi8vY3JsLnNlY3RpZ28uY29tL1NlY3Rp
+# Z29QdWJsaWNDb2RlU2lnbmluZ1Jvb3RSNDYuY3JsMHsGCCsGAQUFBwEBBG8wbTBG
+# BggrBgEFBQcwAoY6aHR0cDovL2NydC5zZWN0aWdvLmNvbS9TZWN0aWdvUHVibGlj
+# Q29kZVNpZ25pbmdSb290UjQ2LnA3YzAjBggrBgEFBQcwAYYXaHR0cDovL29jc3Au
+# c2VjdGlnby5jb20wDQYJKoZIhvcNAQEMBQADggIBAAb/guF3YzZue6EVIJsT/wT+
+# mHVEYcNWlXHRkT+FoetAQLHI1uBy/YXKZDk8+Y1LoNqHrp22AKMGxQtgCivnDHFy
+# AQ9GXTmlk7MjcgQbDCx6mn7yIawsppWkvfPkKaAQsiqaT9DnMWBHVNIabGqgQSGT
+# rQWo43MOfsPynhbz2Hyxf5XWKZpRvr3dMapandPfYgoZ8iDL2OR3sYztgJrbG6VZ
+# 9DoTXFm1g0Rf97Aaen1l4c+w3DC+IkwFkvjFV3jS49ZSc4lShKK6BrPTJYs4NG1D
+# GzmpToTnwoqZ8fAmi2XlZnuchC4NPSZaPATHvNIzt+z1PHo35D/f7j2pO1S8BCys
+# QDHCbM5Mnomnq5aYcKCsdbh0czchOm8bkinLrYrKpii+Tk7pwL7TjRKLXkomm5D1
+# Umds++pip8wH2cQpf93at3VDcOK4N7EwoIJB0kak6pSzEu4I64U6gZs7tS/dGNSl
+# jf2OSSnRr7KWzq03zl8l75jy+hOds9TWSenLbjBQUGR96cFr6lEUfAIEHVC1L68Y
+# 1GGxx4/eRI82ut83axHMViw1+sVpbPxg51Tbnio1lB93079WPFnYaOvfGAA0e0zc
+# fF/M9gXr+korwQTh2Prqooq2bYNMvUoUKD85gnJ+t0smrWrb8dee2CvYZXD5laGt
+# aAxOfy/VKNmwuWuAh9kcMIIGXTCCBMWgAwIBAgIQOlJqLITOVeYdZfzMEtjpiTAN
+# BgkqhkiG9w0BAQwFADBVMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2VjdGlnbyBM
+# aW1pdGVkMSwwKgYDVQQDEyNTZWN0aWdvIFB1YmxpYyBUaW1lIFN0YW1waW5nIENB
+# IFIzNjAeFw0yNDAxMTUwMDAwMDBaFw0zNTA0MTQyMzU5NTlaMG4xCzAJBgNVBAYT
+# AkdCMRMwEQYDVQQIEwpNYW5jaGVzdGVyMRgwFgYDVQQKEw9TZWN0aWdvIExpbWl0
+# ZWQxMDAuBgNVBAMTJ1NlY3RpZ28gUHVibGljIFRpbWUgU3RhbXBpbmcgU2lnbmVy
+# IFIzNTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAI3RZ/TBSJu9/ThJ
+# Ok1hgZvD2NxFpWEENo0GnuOYloD11BlbmKCGtcY0xiMrsN7LlEgcyoshtP3P2J/v
+# neZhuiMmspY7hk/Q3l0FPZPBllo9vwT6GpoNnxXLZz7HU2ITBsTNOs9fhbdAWr/M
+# m8MNtYov32osvjYYlDNfefnBajrQqSV8Wf5ZvbaY5lZhKqQJUaXxpi4TXZKohLgx
+# U7g9RrFd477j7jxilCU2ptz+d1OCzNFAsXgyPEM+NEMPUz2q+ktNlxMZXPF9WLIh
+# OhE3E8/oNSJkNTqhcBGsbDI/1qCU9fBhuSojZ0u5/1+IjMG6AINyI6XLxM8OAGQm
+# aMB8gs2IZxUTOD7jTFR2HE1xoL7qvSO4+JHtvNceHu//dGeVm5Pdkay3Et+YTt9E
+# wAXBsd0PPmC0cuqNJNcOI0XnwjE+2+Zk8bauVz5ir7YHz7mlj5Bmf7W8SJ8jQwO2
+# IDoHHFC46ePg+eoNors0QrC0PWnOgDeMkW6gmLBtq3CEOSDU8iNicwNsNb7ABz0W
+# 1E3qlSw7jTmNoGCKCgVkLD2FaMs2qAVVOjuUxvmtWMn1pIFVUvZ1yrPIVbYt1aTl
+# d2nrmh544Auh3tgggy/WluoLXlHtAJgvFwrVsKXj8ekFt0TmaPL0lHvQEe5jHbuf
+# hc05lvCtdwbfBl/2ARSTuy1s8CgFAgMBAAGjggGOMIIBijAfBgNVHSMEGDAWgBRf
+# WO1MMXqiYUKNUoC6s2GXGaIymzAdBgNVHQ4EFgQUaO+kMklptlI4HepDOSz0FGqe
+# DIUwDgYDVR0PAQH/BAQDAgbAMAwGA1UdEwEB/wQCMAAwFgYDVR0lAQH/BAwwCgYI
+# KwYBBQUHAwgwSgYDVR0gBEMwQTA1BgwrBgEEAbIxAQIBAwgwJTAjBggrBgEFBQcC
+# ARYXaHR0cHM6Ly9zZWN0aWdvLmNvbS9DUFMwCAYGZ4EMAQQCMEoGA1UdHwRDMEEw
+# P6A9oDuGOWh0dHA6Ly9jcmwuc2VjdGlnby5jb20vU2VjdGlnb1B1YmxpY1RpbWVT
+# dGFtcGluZ0NBUjM2LmNybDB6BggrBgEFBQcBAQRuMGwwRQYIKwYBBQUHMAKGOWh0
+# dHA6Ly9jcnQuc2VjdGlnby5jb20vU2VjdGlnb1B1YmxpY1RpbWVTdGFtcGluZ0NB
+# UjM2LmNydDAjBggrBgEFBQcwAYYXaHR0cDovL29jc3Auc2VjdGlnby5jb20wDQYJ
+# KoZIhvcNAQEMBQADggGBALDcLsn6TzZMii/2yU/V7xhPH58Oxr/+EnrZjpIyvYTz
+# 2u/zbL+fzB7lbrPml8ERajOVbudan6x08J1RMXD9hByq+yEfpv1G+z2pmnln5Xuc
+# fA9MfzLMrCArNNMbUjVcRcsAr18eeZeloN5V4jwrovDeLOdZl0tB7fOX5F6N2rmX
+# aNTuJR8yS2F+EWaL5VVg+RH8FelXtRvVDLJZ5uqSNIckdGa/eUFhtDKTTz9LtOUh
+# 46v2JD5Q3nt8mDhAjTKp2fo/KJ6FLWdKAvApGzjpPwDqFeJKf+kJdoBKd2zQuwzk
+# 5Wgph9uA46VYK8p/BTJJahKCuGdyKFIFfEfakC4NXa+vwY4IRp49lzQPLo7Wticq
+# Maaqb8hE2QmCFIyLOvWIg4837bd+60FcCGbHwmL/g1ObIf0rRS9ceK4DY9rfBnHF
+# H2v1d4hRVvZXyCVlrL7ZQuVzjjkLMK9VJlXTVkHpuC8K5S4HHTv2AJx6mOdkMJwS
+# 4gLlJ7gXrIVpnxG+aIniGDCCBmswggTToAMCAQICEQCMQZ6TvyvOrIgGKDt2Gb08
+# MA0GCSqGSIb3DQEBDAUAMFQxCzAJBgNVBAYTAkdCMRgwFgYDVQQKEw9TZWN0aWdv
+# IExpbWl0ZWQxKzApBgNVBAMTIlNlY3RpZ28gUHVibGljIENvZGUgU2lnbmluZyBD
+# QSBSMzYwHhcNMjQxMTE0MDAwMDAwWhcNMjcxMTE0MjM1OTU5WjBXMQswCQYDVQQG
+# EwJERTEWMBQGA1UECAwNTmllZGVyc2FjaHNlbjEXMBUGA1UECgwOTWFydGluIFdp
+# bGxpbmcxFzAVBgNVBAMMDk1hcnRpbiBXaWxsaW5nMIICIjANBgkqhkiG9w0BAQEF
+# AAOCAg8AMIICCgKCAgEA0Z9u5pyMwenbCRSzHsUEDUXfGjL+9w05WuvBukPLvldk
+# 2NSUP2eI9qAiPQE1tytz+zQD3ZRNEJrXYwtBf++I7H4pf4vC8Mbsk9N+MGm1YmSl
+# HKHZirBBYTPWpvFuZFIC7guRSCuMDTquU382HR08ibtXkdl7kg6DKdMIOOZjrhTQ
+# W2AfA1QbR8aG71quHgrN5VMV9O8Ed0K9lLW/dsPHlNryq9krPcSIf2LzOFMYAaTt
+# SOjvltrQAeZpspyIKAn1+5ruog9wPgIaUPRr9tPRvN8vBT6xSSFlO+003oRK2z42
+# dO+MV8K5RJIZxlApNcPiojbWR2kp9F/r54aie6LQcUGUABEpYVl6Qygrp551Z1YM
+# L1VrXHAIcWTveXon+lbLP1IQmgWdurM5Z3hrRXkwpSOPpN5qn1rqHbV4x3PKIQHJ
+# Vqe11csJYsIQhRLAHBZKZAsor3stLKhH68IjJ0ctXpR9Ut+13EGmr+fm7eCsbSF7
+# jlRMd7zPTB3Za2ltMtaJ+RPIuLWoHSOOUx9C1NPNLm3NjCqqumV7aZU7tcHRdgoM
+# t4X0ki5CbHEVgKb6bzjulbXOI0xvwDuoqjeTOksHfoONF7bMQQ/4EpPZDKpICdaQ
+# 9RqeYJB5z9b3rrfmICfcVnEQySO73IrParF8LVcm3jgoeeq00Lwv03+gSbYonhEC
+# AwEAAaOCAbMwggGvMB8GA1UdIwQYMBaAFA8qyyCHKLjsb0iuK1SmKaoXpM0MMB0G
+# A1UdDgQWBBSMcmQJhB5e7gHxMGweJ8yPDAgi2zAOBgNVHQ8BAf8EBAMCB4AwDAYD
+# VR0TAQH/BAIwADATBgNVHSUEDDAKBggrBgEFBQcDAzBKBgNVHSAEQzBBMDUGDCsG
+# AQQBsjEBAgEDAjAlMCMGCCsGAQUFBwIBFhdodHRwczovL3NlY3RpZ28uY29tL0NQ
+# UzAIBgZngQwBBAEwSQYDVR0fBEIwQDA+oDygOoY4aHR0cDovL2NybC5zZWN0aWdv
+# LmNvbS9TZWN0aWdvUHVibGljQ29kZVNpZ25pbmdDQVIzNi5jcmwweQYIKwYBBQUH
+# AQEEbTBrMEQGCCsGAQUFBzAChjhodHRwOi8vY3J0LnNlY3RpZ28uY29tL1NlY3Rp
+# Z29QdWJsaWNDb2RlU2lnbmluZ0NBUjM2LmNydDAjBggrBgEFBQcwAYYXaHR0cDov
+# L29jc3Auc2VjdGlnby5jb20wKAYDVR0RBCEwH4EdbXdpbGxpbmdAbGV0aGFsLWZv
+# cmVuc2ljcy5jb20wDQYJKoZIhvcNAQEMBQADggGBAGdHQTDMJblhm/jA9axlmj7W
+# l6zWZ5WajmcYG3azCwSgEK9EBnCCwlSGeEmWGnr0+cjEeoxRkgI4GhbZ5PGaW7Rs
+# IoP3nfwvw9TXvEmcn33bQC57P+Qh8TJ1PJLO7re3bEesxQ+P25pY7qFKIueVuv11
+# P9aa/rakWmRib40iiUAjfTIRQL10qTz6kbI9u83tfimCARdfy9AVtB0tHfWYRklK
+# BMKjAy6UH9nqiRcsss1rdtVVYSxepoGdXRObQi2WOxEc8ev4eTexdMN+taIoIszG
+# wjHUk9vVznOZgfKugsnuzphHzNowckVmvnHeEcnLDdqdsB0bpKauPIl/rT1Sph8D
+# Sn/rqbijw0AHleCe4FArXryLDraMogtvmpoprvNaONuA5fjbAMgi89El7zQIVb7V
+# O9x+tYLaD2v0lqLnptkvm86e6Brxj6Kf/ZoeAl5Iui1Xgx94QzPIWbCYPxE6CFog
+# 6M03NslqsFeDs8neMeSMfJXJFzIFrslnMZiytUZiqTCCBoIwggRqoAMCAQICEDbC
+# sL18Gzrno7PdNsvJdWgwDQYJKoZIhvcNAQEMBQAwgYgxCzAJBgNVBAYTAlVTMRMw
+# EQYDVQQIEwpOZXcgSmVyc2V5MRQwEgYDVQQHEwtKZXJzZXkgQ2l0eTEeMBwGA1UE
+# ChMVVGhlIFVTRVJUUlVTVCBOZXR3b3JrMS4wLAYDVQQDEyVVU0VSVHJ1c3QgUlNB
+# IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MB4XDTIxMDMyMjAwMDAwMFoXDTM4MDEx
+# ODIzNTk1OVowVzELMAkGA1UEBhMCR0IxGDAWBgNVBAoTD1NlY3RpZ28gTGltaXRl
+# ZDEuMCwGA1UEAxMlU2VjdGlnbyBQdWJsaWMgVGltZSBTdGFtcGluZyBSb290IFI0
+# NjCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAIid2LlFZ50d3ei5JoGa
+# VFTAfEkFm8xaFQ/ZlBBEtEFAgXcUmanU5HYsyAhTXiDQkiUvpVdYqZ1uYoZEMgtH
+# ES1l1Cc6HaqZzEbOOp6YiTx63ywTon434aXVydmhx7Dx4IBrAou7hNGsKioIBPy5
+# GMN7KmgYmuu4f92sKKjbxqohUSfjk1mJlAjthgF7Hjx4vvyVDQGsd5KarLW5d73E
+# 3ThobSkob2SL48LpUR/O627pDchxll+bTSv1gASn/hp6IuHJorEu6EopoB1CNFp/
+# +HpTXeNARXUmdRMKbnXWflq+/g36NJXB35ZvxQw6zid61qmrlD/IbKJA6COw/8lF
+# SPQwBP1ityZdwuCysCKZ9ZjczMqbUcLFyq6KdOpuzVDR3ZUwxDKL1wCAxgL2Mpz7
+# eZbrb/JWXiOcNzDpQsmwGQ6Stw8tTCqPumhLRPb7YkzM8/6NnWH3T9ClmcGSF22L
+# EyJYNWCHrQqYubNeKolzqUbCqhSqmr/UdUeb49zYHr7ALL8bAJyPDmubNqMtuaob
+# KASBqP84uhqcRY/pjnYd+V5/dcu9ieERjiRKKsxCG1t6tG9oj7liwPddXEcYGOUi
+# WLm742st50jGwTzxbMpepmOP1mLnJskvZaN5e45NuzAHteORlsSuDt5t4BBRCJL+
+# 5EZnnw0ezntk9R8QJyAkL6/bAgMBAAGjggEWMIIBEjAfBgNVHSMEGDAWgBRTeb9a
+# qitKz1SA4dibwJ3ysgNmyzAdBgNVHQ4EFgQU9ndq3T/9ARP/FqFsggIv0Ao9FCUw
+# DgYDVR0PAQH/BAQDAgGGMA8GA1UdEwEB/wQFMAMBAf8wEwYDVR0lBAwwCgYIKwYB
+# BQUHAwgwEQYDVR0gBAowCDAGBgRVHSAAMFAGA1UdHwRJMEcwRaBDoEGGP2h0dHA6
+# Ly9jcmwudXNlcnRydXN0LmNvbS9VU0VSVHJ1c3RSU0FDZXJ0aWZpY2F0aW9uQXV0
+# aG9yaXR5LmNybDA1BggrBgEFBQcBAQQpMCcwJQYIKwYBBQUHMAGGGWh0dHA6Ly9v
+# Y3NwLnVzZXJ0cnVzdC5jb20wDQYJKoZIhvcNAQEMBQADggIBAA6+ZUHtaES45aHF
+# 1BGH5Lc7JYzrftrIF5Ht2PFDxKKFOct/awAEWgHQMVHol9ZLSyd/pYMbaC0IZ+XB
+# W9xhdkkmUV/KbUOiL7g98M/yzRyqUOZ1/IY7Ay0YbMniIibJrPcgFp73WDnRDKtV
+# utShPSZQZAdtFwXnuiWl8eFARK3PmLqEm9UsVX+55DbVIz33Mbhba0HUTEYv3yJ1
+# fwKGxPBsP/MgTECimh7eXomvMm0/GPxX2uhwCcs/YLxDnBdVVlxvDjHjO1cuwbOp
+# kiJGHmLXXVNbsdXUC2xBrq9fLrfe8IBsA4hopwsCj8hTuwKXJlSTrZcPRVSccP5i
+# 9U28gZ7OMzoJGlxZ5384OKm0r568Mo9TYrqzKeKZgFo0fj2/0iHbj55hc20jfxvK
+# 3mQi+H7xpbzxZOFGm/yVQkpo+ffv5gdhp+hv1GDsvJOtJinJmgGbBFZIThbqI+MH
+# vAmMmkfb3fTxmSkop2mSJL1Y2x/955S29Gu0gSJIkc3z30vU/iXrMpWx2tS7UVfV
+# P+5tKuzGtgkP7d/doqDrLF1u6Ci3TpjAZdeLLlRQZm867eVeXED58LXd1Dk6UvaA
+# hvmWYXoiLz4JA5gPBcz7J311uahxCweNxE+xxxR3kT0WKzASo5G/PyDez6NHdIUK
+# BeE3jDPs2ACc6CkJ1Sji4PKWVT0/MYIGMDCCBiwCAQEwaTBUMQswCQYDVQQGEwJH
+# QjEYMBYGA1UEChMPU2VjdGlnbyBMaW1pdGVkMSswKQYDVQQDEyJTZWN0aWdvIFB1
+# YmxpYyBDb2RlIFNpZ25pbmcgQ0EgUjM2AhEAjEGek78rzqyIBig7dhm9PDAJBgUr
+# DgMCGgUAoHgwGAYKKwYBBAGCNwIBDDEKMAigAoAAoQKAADAZBgkqhkiG9w0BCQMx
+# DAYKKwYBBAGCNwIBBDAcBgorBgEEAYI3AgELMQ4wDAYKKwYBBAGCNwIBFTAjBgkq
+# hkiG9w0BCQQxFgQUjWQw/a2CtX5KN89/O68GOzWTbK8wDQYJKoZIhvcNAQEBBQAE
+# ggIAhR/Ugm4EAtHD7RoNFKw5roKd7PgjR5qLXE0YIoMiLSn210IWTg7iqQG9ktGI
+# eowI9VJLZAKl0UxvZa+94oEW2wJMupRw737VArxri7cjOdbOdIFXmGSWxheWv/Pk
+# ZDUE0CbUygz4wbkv/JzBB5RsSrrcXHNhBEC7mwoMdzoUGMSjB1evRslJ8YVYxh3r
+# bx1IAuitj+ZgoNpBrdxB6KsrEf/TyHjy71adU0orqc2L/bbyIHbns6BoVXZ3hCUL
+# uf5zhRU5DjG8aca/O2+wX9Dj5413D82aAUIK073A0246NnkGE+DHgUHeAexWB6kr
+# vhGboe79hwrAOoRwSJXOIR0oJAkFhjiJIv1/c0HIE8nsp18fKU686w+HBf/DZqJk
+# nHOHOw8Ni4l8kTAMzMWhMkXUEEek0N5i5kiI2gjqJQ/DTCgMI9DwTMhcPuvxMsd6
+# i8OvX0+vcT+B2/DjpUHH66yg2oz9q1qqaA7tHKHbfV+qBkky4okq5KEBR6A+xQSr
+# zrf+N7My/WDGitcHOJI3h8aPnhTpa2ER3Uwy6Ik9YgIAYgxXKlf/lc1fPuCBzjSw
+# NbRWTA6YRcoh7vKKtgQqXuXPXFe9ef8MzSG+R6a9MpZ41Z/+oJEp2y3w98Hh+D2D
+# 0pj2ZIydJGQMVjAqieNceQlu8HHnZDdCoOxaLqTRdzSnMRqhggMiMIIDHgYJKoZI
+# hvcNAQkGMYIDDzCCAwsCAQEwaTBVMQswCQYDVQQGEwJHQjEYMBYGA1UEChMPU2Vj
+# dGlnbyBMaW1pdGVkMSwwKgYDVQQDEyNTZWN0aWdvIFB1YmxpYyBUaW1lIFN0YW1w
+# aW5nIENBIFIzNgIQOlJqLITOVeYdZfzMEtjpiTANBglghkgBZQMEAgIFAKB5MBgG
+# CSqGSIb3DQEJAzELBgkqhkiG9w0BBwEwHAYJKoZIhvcNAQkFMQ8XDTI1MDMxMDA2
+# Mjc1NVowPwYJKoZIhvcNAQkEMTIEMKw0n9/+BtVgsDwQmTwrKrUnZtrD9nB0N8+e
+# NcawQkvIASxw4zMYIUn+ksVDtzJqFjANBgkqhkiG9w0BAQEFAASCAgAulmDbvucW
+# n/qPQ+3nVlRNTnQS0018aTjVLUG6olzBEDmsaR72HjgbZ+Xu6DoN0PL6pKw4VYff
+# pHLdpQxbW+ylTiq2hr8yw1tRm5yOBG4Vep3OF+t19cgvMwCMIU+m3Ub4IxXUqstD
+# jO3YUHwFN0KHcvCWdykFkPsBZdZXy6T+e3H3q1XaB6plZkuQ/9/FoobfzbcILO68
+# 1QtX/ERRLYHVpK0SR99JlgS8scukLIwWRyoFWt8OgVbvJR8e/VngIhcRnB7cKvJ+
+# dlOxfP7OHUJiaWfGCOYLWvKC1YoBdIENh1m1ShB7EKuWtFKUf339G/D63oQ7Q/gY
+# VUdJNp8LnG/ei9xQPSLSx9w6Wnz6UTTBmhPmx2hceYX3GLt9Q6uCnfSXR7nf+jDv
+# ekdp0Qkfx3fsFrq7BDOspiKFlLC6iab8xbgpYURwdkRdLM7sxA14QoCQbIaZsivM
+# XN/II9E5QNldY/BUK0cRouJL8nn2Ati2na8N8yIerqoxtlxW4QoRSzSOiqBBbeJp
+# S5MUESGsR6sm10aFoQLyC6/Tt8Ls/l+E3sQxBkPPG4d5yKZKb+kg3VW5KcxFZqgU
+# XhKQsdRLee/Ms6wKOLEEi4zBNGXmEu3HzS/5NUdgdEQdo0uZWE9COJm7Q/6GvHhQ
+# 9oSMjwsXJhjP+/tmYQKZG0KYgPDNYhIcZQ==
+# SIG # End signature block
