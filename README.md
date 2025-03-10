@@ -102,62 +102,77 @@ https://www.microsoft.com/en-us/download/details.aspx?id=17718
 > [!IMPORTANT]  
 > MAGNET DumpIt for Windows does NOT support Windows 7 target systems. Please use any of the other memory acquisition tools when dealing with Windows 7. 
   
-![Help-Message](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/01541f2e2cb37c678c6bdbd277a2283726e204b5/Screenshots/01.jpg)  
+![Help-Message](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/01.jpg)  
 **Fig 1:** Help Message  
 
-![AvailableSpace](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/02.png)  
+![AvailableSpace](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/02.jpg)  
 **Fig 2:** Check Available Space
 
-![DumpIt - Microsoft Crash Dump](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/03.png)  
+![DumpIt - Microsoft Crash Dump](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/03.jpg)  
 **Fig 3:** Automated Creation of Windows Memory Snapshot w/ MAGNET DumpIt for Windows (incl. Pagefile)
 
-![DumpIt - Raw Physical Memory Dump](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/04.png)  
+![DumpIt - Raw Physical Memory Dump](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/04.jpg)  
 **Fig 4:** Automated Creation of Windows Memory Snapshot w/ MAGNET DumpIt for Windows (incl. Pagefile)
 
-![WinPMEM](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/05.png)  
+![WinPMEM](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/05.jpg)  
 **Fig 5:** Automated Creation of Windows Memory Snapshot w/ WinPMEM (incl. Pagefile)
 
-![Belkasoft](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/06.png)  
+![Belkasoft](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/06.jpg)  
 **Fig 6:** Automated Creation of Windows Memory Snapshot w/ Belkasoft Live RAM Capturer (incl. Pagefile)
 
-![Pagefile Collection](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/07.png)  
+![Pagefile Collection](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/07.jpg)  
 **Fig 7:** Pagefile Collection w/ MAGNET Response
 
-![Process-Module Information](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/08.png)  
+![Process-Module Information](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/08.jpg)  
 **Fig 8:** Collecting Running Process/Module Information w/ MAGNET Response
 
-![MessageBox](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/09.png)  
+![MessageBox](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/09.jpg)  
 **Fig 9:** Message Box
 
-![MAGNET RAM Capture GUI](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/10.png)  
+![MAGNET RAM Capture GUI](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/10.jpg)  
 **Fig 10:** MAGNET RAM Capture
 
-![MAGNET RAM Capture](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/11.png)  
+![MAGNET RAM Capture](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/11.jpg)  
 **Fig 11:** Automated Creation of Windows Memory Snapshot w/ MAGNET RAM Capture
 
-![MessageBox - Memory Snapshot created successfully](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/12.png)  
+![MessageBox - Memory Snapshot created successfully](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/12.jpg)  
 **Fig 12:** Message Box
 
-![SecureArchive](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/13.png)  
-**Fig 13:** Secure Archive Container (PW: IncidentResponse) and Logfile.txt
+![Triage Collection](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/13.jpg)  
+**Fig 13:** Triage Collection w/ MAGNET Response
 
-![OutputDirectories](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/14.png)  
-**Fig 14:** Output Directories
+![Full Collection](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/14.jpg)  
+**Fig 14:** Automated Creation of Windows Memory Snapshot w/ MAGNET DumpIt for Windows (incl. Pagefile) + Triage Collection
 
-![MemoryDirectories](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/15.png)  
-**Fig 15:** Memory Directories (DumpIt and Pagefile)
+![MessageBox - Full Collection](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/15.jpg)  
+**Fig 15:** Message Box
 
-![Memory](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/16.png)  
-**Fig 16:** Memory Snapshot (in a forensically sound manner)
+![SecureArchive](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/16.jpg)  
+**Fig 16:** Secure Archive Container (PW: IncidentResponse) and Logfile.txt
 
-![PageFileInfo](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/17.png)  
-**Fig 17:** Pagefile and PageFileInfo
+![OutputDirectories](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/17.png)  
+**Fig 17:** Output Directories
 
-![Pagefile Collection](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/18.png)  
-**Fig 18:** Pagefile Collection (in a forensically sound manner)
+![MemoryDirectories](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/18.png)  
+**Fig 18:** Memory Directories (DumpIt and Pagefile)
 
-![SystemInfo](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/19.png)  
-**Fig 19:** Collected System Information
+![Memory](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/19.png)  
+**Fig 19:** Memory Snapshot (in a forensically sound manner)
+
+![PageFileInfo](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/20.png)  
+**Fig 20:** Pagefile and PageFileInfo
+
+![Pagefile Collection](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/21.png)  
+**Fig 21:** Pagefile Collection (in a forensically sound manner)
+
+![SystemInfo](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/22.png)  
+**Fig 22:** Collected System Information
+
+![ProcessesAndModules-Extended_Info.tsv](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/23.jpg)  
+**Fig 23:** Automated Processing of 'ProcessesAndModules-Extended_Info.tsv' (MAGNET Response)
+
+![ProcessesAndModules-Extended_Info.ps1](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/24.jpg)  
+**Fig 24:** 'ProcessesAndModules-Extended_Info.ps1'
 
 ## Dependencies  
 7-Zip 24.09 Standalone Console (2024-11-29)  
