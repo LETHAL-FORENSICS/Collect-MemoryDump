@@ -142,7 +142,7 @@ https://www.microsoft.com/en-us/download/details.aspx?id=17718
 **Fig 13:** Triage Collection w/ MAGNET Response
 
 ![Full Collection](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/14.jpg)  
-**Fig 14:** Automated Creation of Windows Memory Snapshot w/ MAGNET DumpIt for Windows (incl. Pagefile) + Triage Collection
+**Fig 14:** Windows Memory Snapshot w/ MAGNET DumpIt (incl. Pagefile) + Triage Collection
 
 ![MessageBox - Full Collection](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/15.jpg)  
 **Fig 15:** Message Box
