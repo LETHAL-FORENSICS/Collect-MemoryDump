@@ -102,7 +102,7 @@ https://www.microsoft.com/en-us/download/details.aspx?id=17718
 > [!IMPORTANT]  
 > MAGNET DumpIt for Windows does NOT support Windows 7 target systems. Please use any of the other memory acquisition tools when dealing with Windows 7. 
   
-![Help-Message](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/01.png)  
+![Help-Message](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/01541f2e2cb37c678c6bdbd277a2283726e204b5/Screenshots/01.jpg)  
 **Fig 1:** Help Message  
 
 ![AvailableSpace](https://github.com/evild3ad/Collect-MemoryDump/blob/14fe3946daa65ee553050121d3a5e316236f67d3/Screenshots/02.png)  
