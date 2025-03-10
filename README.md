@@ -11,7 +11,7 @@ Features:
 * Checks if you have enough free disk space to save memory dump file
 * Collects a Microsoft Crash Dump w/ MAGNET DumpIt for Windows
 * Collects a Raw Physical Memory Dump w/ MAGNET DumpIt, MAGNET RAM Capture, Belkasoft Live RAM Capturer and WinPMEM
-* Pagefile Collection w/ MAGNET Response (Optional) &#8594; very useful when dealing with reflective PE injection techniques
+* Pagefile Collection w/ MAGNET Response &#8594; very useful when dealing with reflective PE injection techniques
 * Triage-Collection w/ MAGNET Response (Optional)
 * Collects Running Process/Module Information w/ MAGNET Response
 * Checks for Encrypted Volumes w/ MAGNET Encrypted Disk Detector (EDD)
