@@ -172,7 +172,7 @@ https://www.microsoft.com/en-us/download/details.aspx?id=17718
 **Fig 23:** Automated Processing of 'ProcessesAndModules-Extended_Info.tsv' (MAGNET Response)
 
 ![ProcessesAndModules-Extended_Info.ps1](https://github.com/LETHAL-FORENSICS/Collect-MemoryDump/blob/6b9d9900266a08b668d385501f0745f330d1d067/Screenshots/24.jpg)  
-**Fig 24:** 'ProcessesAndModules-Extended_Info.ps1'
+**Fig 24:** 'ProcessesAndModules-Extended_Info.ps1' &#8594; [MemProcFS-Analyzer](https://github.com/LETHAL-FORENSICS/MemProcFS-Analyzer/blob/main/Scripts/ProcessesAndModules-Extended_Info.ps1)
 
 ## Dependencies  
 7-Zip 24.09 Standalone Console (2024-11-29)  
