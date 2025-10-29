@@ -3,7 +3,7 @@
 # Collect-MemoryDump
 Collect-MemoryDump - Automated Creation of Windows Memory Snapshots for DFIR
 
-Collect-MemoryDump.ps1 is PowerShell script utilized to collect a Memory Snapshot from a live Windows system (including Pagefile Collection) in a forensically sound manner.
+Collect-MemoryDump.ps1 is a PowerShell script utilized to collect a Memory Snapshot from a live Windows system (including Pagefile Collection) in a forensically sound manner.
 
 Features:
 * ARM64 Support (MAGNET DumpIt for Windows and MAGNET Response)
